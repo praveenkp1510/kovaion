@@ -1,8 +1,7 @@
 import React from "react";
 import "./LeadDetails.scss";
-// Assuming you have a GlassCard component here, though for the styling issue
-// it's the className="detail-card" that matters, which extends .glass-card in your SCSS.
-import GlassCard from "../components/GlassCard/GlassCard"; 
+
+import GlassCard from "../components/GlassCard/GlassCard";
 import {
   FiMail,
   FiPhone,
@@ -24,18 +23,12 @@ import {
 } from "react-icons/fi";
 import { FaCalendarCheck, FaChevronRight } from "react-icons/fa";
 
-// ----------------------------------------------------
-// FIXED: DEFINE COLORS AS JAVASCRIPT CONSTANTS
-// This prevents the "Uncaught ReferenceError: $text is not defined" error.
-// These values match the SCSS variables in LeadDetails.scss.
-// ----------------------------------------------------
 const COLORS = {
-  light: '#f1f1f1',
-  faded: '#a0a0a0',
-  primary: '#6a0dad', 
+  light: "#f1f1f1",
+  faded: "#a0a0a0",
+  primary: "#6a0dad",
 };
 
-// Mock Data based on the screenshots/PDF
 const leadData = {
   name: "Thomas Fleming",
   company: "On My Goodknits Inc",
@@ -46,7 +39,6 @@ const leadData = {
   status: "Completed",
   lastContacted: "24-Jan-2025",
 
-  // Detailed Information (from Screenshot 16/PDF)
   detailed: {
     owner: "Nandhakumar",
     title: "Director of Sales",
@@ -71,7 +63,6 @@ const leadData = {
     skype_id: "carissa-kidman",
   },
 
-  // Address Information (from Screenshot 16)
   address: {
     street: "5 Boston Ave #88",
     state: "SD",
@@ -80,10 +71,9 @@ const leadData = {
     zip: "57105",
   },
 
-  description: "-", // from Screenshot 16
+  description: "-",
 };
 
-// Data structure for the Related Lists Sidebar
 const relatedLists = [
   { name: "Notes", icon: <FiMessageSquare className="icon" />, path: "notes" },
   {
@@ -110,7 +100,6 @@ const relatedLists = [
   { name: "Social", icon: <FiUser className="icon" />, path: "social" },
 ];
 
-// Helper component for a quick info pair (like Lead Owner: Nandha Kumar)
 const QuickInfo = ({ label, value }) => (
   <div className="quick-info-grid">
     <span className="label">{label}</span>
@@ -118,7 +107,6 @@ const QuickInfo = ({ label, value }) => (
   </div>
 );
 
-// Helper component for the two-column Lead Information layout
 const DetailedInfoPair = ({ label, value }) => (
   <div className="info-pair">
     <span className="label">{label}</span>
@@ -131,7 +119,6 @@ const LeadDetails = () => {
   const [activeRelatedList, setActiveRelatedList] = React.useState("Notes");
   const [activeEmailTab, setActiveEmailTab] = React.useState("Mail");
 
-  // Function to render the currently selected content based on the left sidebar
   const renderRelatedContent = () => {
     switch (activeRelatedList) {
       case "Notes":
@@ -146,8 +133,8 @@ const LeadDetails = () => {
               </div>
               <p
                 style={{
-                  // FIXED: Used JS constant
-                  color: leadData.description === "-" ? COLORS.faded : COLORS.light, 
+                  color:
+                    leadData.description === "-" ? COLORS.faded : COLORS.light,
                   margin: "5px 0",
                 }}
               >
@@ -249,7 +236,7 @@ const LeadDetails = () => {
                 style={{
                   display: "block",
                   margin: "20px auto",
-                  color: COLORS.faded, // FIXED: Used JS constant
+                  color: COLORS.faded,
                 }}
               />
             </div>
@@ -281,7 +268,6 @@ const LeadDetails = () => {
 
   return (
     <div className="lead-details-page">
-      {/* Header Section */}
       <header className="lead-header">
         <div className="main-info">
           <img
@@ -312,14 +298,12 @@ const LeadDetails = () => {
         </div>
       </header>
 
-      {/* Main Content Layout */}
       <main className="lead-content">
-        {/* LEFT COLUMN: Related Lists Sidebar */}
         <div className="related-lists-sidebar">
           <div
             style={{
               marginBottom: "15px",
-              color: COLORS.light, // FIXED: Used JS constant
+              color: COLORS.light,
               fontWeight: "bold",
             }}
           >
@@ -339,9 +323,7 @@ const LeadDetails = () => {
           ))}
         </div>
 
-        {/* RIGHT COLUMN: Details Area */}
         <div className="details-area">
-          {/* Tabs Navigation (Overview/Timeline) */}
           <nav className="tabs-nav">
             <span
               className={activeTab === "Overview" ? "active" : ""}
@@ -359,7 +341,6 @@ const LeadDetails = () => {
 
           {activeTab === "Overview" && (
             <div className="detail-section">
-              {/* Quick Info (Top Section) */}
               <GlassCard className="detail-card">
                 <QuickInfo label="Lead Owner" value={leadData.leadOwner} />
                 <QuickInfo label="Email" value={leadData.email} />
@@ -368,12 +349,9 @@ const LeadDetails = () => {
                 <QuickInfo label="Lead Status" value={leadData.status} />
               </GlassCard>
 
-              {/* Lead Information */}
               <GlassCard className="detail-card">
                 <h3 style={{ marginBottom: "0" }}>Lead Information</h3>
-                <span
-                  style={{ color: COLORS.faded, fontSize: "0.9rem" }} // FIXED: Used JS constant
-                >
+                <span style={{ color: COLORS.faded, fontSize: "0.9rem" }}>
                   Hide Details
                 </span>
                 <div className="section-separator" />
@@ -453,11 +431,9 @@ const LeadDetails = () => {
                     value={leadData.detailed.skype_id}
                   />
                   <DetailedInfoPair label=" " value=" " />{" "}
-                  {/* Blank pair for alignment */}
                 </div>
               </GlassCard>
 
-              {/* Address Information */}
               <GlassCard className="detail-card">
                 <h3>Address Information</h3>
                 <div className="quick-info-grid two-column-layout">
@@ -487,20 +463,20 @@ const LeadDetails = () => {
                 </div>
               </GlassCard>
 
-              {/* Description Information */}
               <GlassCard className="detail-card">
                 <h3>Description Information</h3>
                 <p
                   style={{
-                    // FIXED: Used JS constant
-                    color: leadData.description === "-" ? COLORS.faded : COLORS.light,
+                    color:
+                      leadData.description === "-"
+                        ? COLORS.faded
+                        : COLORS.light,
                   }}
                 >
                   {leadData.description}
                 </p>
               </GlassCard>
 
-              {/* Content based on the Active Related List */}
               <GlassCard className="detail-card">
                 {renderRelatedContent()}
               </GlassCard>
@@ -510,7 +486,7 @@ const LeadDetails = () => {
           {activeTab === "Timeline" && (
             <GlassCard className="detail-card">
               <h3>Timeline View</h3>
-              <p style={{ color: COLORS.faded }}> {/* FIXED: Used JS constant */}
+              <p style={{ color: COLORS.faded }}>
                 Timeline content will be displayed here.
               </p>
             </GlassCard>

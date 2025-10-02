@@ -1,8 +1,5 @@
-// You must import the 'sass:color' module to use color functions like color.adjust()
 @use "sass:color";
-// src/pages/LeadDetails.scss (Adjusted for Left Sidebar Related Lists)
 $bg-color: #1a1a2e7a;
-// --- UPDATED PRIMARY COLOR ---
 $primary-color: #0083ff;
 // -----------------------------
 $text-color-light: #f1f1f1;
@@ -17,15 +14,13 @@ $border-light: rgba(255, 255, 255, 0.1);
   padding: 30px;
   color: $text-color-light;
 
-  // --- Header Section (Same as before) ---
   .lead-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-bottom: 20px;
     margin-bottom: 20px;
-    border-bottom: 1px solid $border-light; // Added border for separation
-
+    border-bottom: 1px solid $border-light;
     .main-info {
       display: flex;
       align-items: center;
@@ -36,7 +31,7 @@ $border-light: rgba(255, 255, 255, 0.1);
         height: 70px;
         border-radius: 50%;
         object-fit: cover;
-        border: 2px solid $primary-color; // Uses new primary color
+        border: 2px solid $primary-color;
       }
       .text-info {
         h1 {
@@ -72,10 +67,10 @@ $border-light: rgba(255, 255, 255, 0.1);
 
         &.email-btn {
           background-color: transparent;
-          color: $primary-color; // Uses new primary color
-          border: 1px solid $primary-color; // Uses new primary color
+          color: $primary-color;
+          border: 1px solid $primary-color; 
           &:hover {
-            // Calculate a lighter background for the hover state based on the new primary color
+            
             background-color: color.adjust($primary-color, $alpha: -0.8);
           }
         }
@@ -92,13 +87,13 @@ $border-light: rgba(255, 255, 255, 0.1);
     }
   }
 
-  // --- Content Layout: Related Lists (Left) & Details (Right) ---
+ 
   .lead-content {
     display: flex;
     gap: 30px;
 
     .related-lists-sidebar {
-      width: 250px; // Fixed width for the left sidebar
+      width: 250px; 
       flex-shrink: 0;
 
       .related-list-item {
@@ -141,7 +136,7 @@ $border-light: rgba(255, 255, 255, 0.1);
           border-bottom: 3px solid transparent;
           &.active {
             color: $text-color-light;
-            border-bottom-color: $primary-color; // Uses new primary color
+            border-bottom-color: $primary-color;
           }
         }
       }
@@ -154,26 +149,26 @@ $border-light: rgba(255, 255, 255, 0.1);
     }
   }
 
-  // --- Detail Card Styles ---
+
   .detail-card {
-    // @extend .glass-card; // Use the glass effect
+    
     padding: 20px;
     border-radius: 12px;
 
     h3 {
       font-size: 1.2rem;
-      color: $primary-color; // Uses new primary color
+      color: $primary-color; 
       margin-bottom: 15px;
     }
 
     .quick-info-grid {
       display: grid;
-      grid-template-columns: 1fr 2fr; /* Label (1) Value (2) */
+      grid-template-columns: 1fr 2fr; 
       gap: 10px 0;
       margin-bottom: 20px;
 
       .label {
-        color: $primary-color; // Uses new primary color
+        color: $primary-color; 
         font-size: 0.95rem;
       }
       .value {
@@ -214,7 +209,7 @@ $border-light: rgba(255, 255, 255, 0.1);
           font-size: 1.1rem;
         }
         .action-btn {
-          color: $primary-color; // Uses new primary color
+          color: $primary-color;
           text-decoration: none;
           font-size: 0.9rem;
           &:hover {
@@ -241,7 +236,7 @@ $border-light: rgba(255, 255, 255, 0.1);
           border-bottom: 2px solid transparent;
           &.active {
             color: $text-color-light;
-            border-bottom-color: $primary-color; // Uses new primary color
+            border-bottom-color: $primary-color;
           }
         }
       }

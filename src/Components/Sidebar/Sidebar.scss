@@ -74,26 +74,20 @@
       background-color: rgba(255, 255, 255, 0.05);
     }
   }
-  // Add this new style block to your .sidebar section in Sidebar.scss
 
   .menu-heading {
-    // Center alignment for consistency with the icons above/below
     text-align: center;
 
-    // Padding/margins to visually separate it from the links
     padding: 20px 0 10px 0;
     margin: 10px 0 0 0;
 
-    // Heading text styling
-    font-size: 11px; // Smaller text size
-    font-weight: 600; // Semi-bold
-    letter-spacing: 1px; // Add some letter spacing
-    text-transform: uppercase; // All caps
+    font-size: 11px; 
+    font-weight: 600;
+    letter-spacing: 1px; 
+    text-transform: uppercase; 
 
-    // A muted, lighter color to suggest a label, not an item
     color: rgba(255, 255, 255, 0.5);
 
-    // Ensures it doesn't receive pointer events like a link
     cursor: default;
   }
 }

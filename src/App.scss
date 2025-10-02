@@ -12,7 +12,6 @@ body,
   );
 }
 
-// Reset and Global Styles
 * {
   box-sizing: border-box;
   margin: 0;
@@ -21,10 +20,9 @@ body,
 }
 
 body {
-  background-color: #121223; // Matches the main dashboard background
+  background-color: #121223;
 }
 
 .app-layout {
-  // Ensure the main layout can contain the fixed sidebar and scroll the content
   display: flex;
 }

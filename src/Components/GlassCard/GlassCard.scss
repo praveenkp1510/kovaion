@@ -1,4 +1,3 @@
-// Define the mixin and the base class here
 @mixin glass-effect($blur: 10px, $bg-color: rgba(255, 255, 255, 0.05), $border-color: rgba(255, 255, 255, 0.15)) {
     background: $bg-color;
     backdrop-filter: blur($blur);
@@ -10,7 +9,7 @@
 }
 
 .glass-card {
-    @include glass-effect(15px); // Apply the mixin
+    @include glass-effect(15px); 
     padding: 20px;
     margin-bottom: 20px;
     color: #f1f1f1;

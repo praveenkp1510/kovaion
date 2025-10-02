@@ -2,10 +2,8 @@
   display: flex;
   min-height: 100vh;
   width: 100%;
-  // Account for the fixed sidebar width
   padding-left: 8%;
-  background-color: #12122346; // Main background for the entire app area
-
+  background-color: #12122346; 
   .main-content {
     flex-grow: 1;
     padding: 20px;
@@ -46,26 +44,19 @@
     }
   }
 
-  // ===================================
-  // --- RESPONSIVE STYLES (Mobile/Tablet) ---
-  // ===================================
+  
 
   @media (max-width: 768px) {
-    // 1. Remove the fixed-sidebar padding so content uses full width
     padding-left: 0;
 
     .main-content {
-      // Reduce padding on smaller screens
       padding: 10px;
 
       .dashboard-body {
         padding: 0;
       }
 
-      // 2. Adjust Card Layout
       .cards-container {
-        // Switch to max 2 columns, or even 1 column on very small screens,
-        // and allow card content to dictate the final width.
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         gap: 15px;
       }
@@ -75,7 +66,6 @@
   @media (max-width: 480px) {
     .main-content {
       .cards-container {
-        // On very small screens (like phones), force one card per row
         grid-template-columns: 1fr;
       }
     }

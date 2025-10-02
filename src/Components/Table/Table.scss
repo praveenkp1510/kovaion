@@ -1,19 +1,17 @@
 body {
   font-family: "Inter", sans-serif;
-  background-color: #171725; /* Dark background for Glassmorphism contrast */
-  // padding: 20px;
+  background-color: #171725; 
 }
 
 .table-wrapper {
-  /* --- Glassmorphism Effect --- */
-  background-color: rgba(42, 42, 68, 0.4); /* Dark base, semi-transparent */
-  backdrop-filter: blur(15px); /* Frosted glass effect */
-  border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle light border */
+  background-color: rgba(42, 42, 68, 0.4); 
+  backdrop-filter: blur(15px); 
+  border: 1px solid rgba(255, 255, 255, 0.1); 
   /* --------------------------- */
   border-radius: 12px;
   padding: 24px;
   color: #fff;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); /* Stronger shadow for depth */
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); 
   max-width: 100%;
   margin: 0 auto;
 }
@@ -24,7 +22,7 @@ body {
   align-items: center;
   margin-bottom: 24px;
   flex-wrap: wrap;
-  gap: 15px; /* Added gap for better responsiveness */
+  gap: 15px; 
 }
 
 .header-left h2 {
@@ -48,7 +46,7 @@ body {
 .search-input {
   display: flex;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.1); /* Lighter Glass input */
+  background-color: rgba(255, 255, 255, 0.1); 
   border-radius: 8px;
   padding: 8px 12px;
   color: #c9c9d4;
@@ -99,7 +97,7 @@ body {
   width: 100%;
   border-collapse: separate;
   border-spacing: 0;
-  table-layout: fixed; /* Ensures columns respect widths on all rows */
+  table-layout: fixed;
 }
 
 .data-table th,
@@ -108,45 +106,45 @@ body {
   padding: 14px 16px;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap; /* Prevent line wrapping */
+  white-space: nowrap; 
 }
 
 .data-table th:nth-child(1),
 .data-table td:nth-child(1) {
   width: 5%;
-} /* S.No */
+} 
 .data-table th:nth-child(2),
 .data-table td:nth-child(2) {
   width: 15%;
-} /* Name */
+} 
 .data-table th:nth-child(3),
 .data-table td:nth-child(3) {
   width: 10%;
-} /* Number */
+} 
 .data-table th:nth-child(4),
 .data-table td:nth-child(4) {
   width: 25%;
-} /* Description */
+} 
 .data-table th:nth-child(5),
 .data-table td:nth-child(5) {
   width: 10%;
-} /* Status */
+} 
 .data-table th:nth-child(6),
 .data-table td:nth-child(6) {
   width: 10%;
-} /* Source */
+} 
 .data-table th:nth-child(7),
 .data-table td:nth-child(7) {
   width: 10%;
-} /* Amount */
+} 
 .data-table th:nth-child(8),
 .data-table td:nth-child(8) {
   width: 10%;
-} /* Interest */
+} 
 .data-table th:nth-child(9),
 .data-table td:nth-child(9) {
   width: 10%;
-} /* Action */
+} 
 
 .data-table th {
   font-size: 13px;
@@ -167,7 +165,7 @@ body {
     255,
     255,
     0.05
-  ); /* Light hover effect for glass */
+  ); 
 }
 
 .data-table td {
@@ -209,20 +207,19 @@ body {
 }
 
 .icon-icon {
-  width: 20%; /* Explicit size for SVGs */
+  width: 20%; 
   height: 20px;
-  stroke-width: 2; /* Make the SVG strokes visible */
-  color: #c9c9d4; /* Default icon color */
+  stroke-width: 2;
+  color: #c9c9d4; 
   cursor: pointer;
   transition: color 0.15s;
   margin-left: 2px;
   padding: 2%;
   &:hover {
-    color: #6366f1; /* Hover effect */
+    color: #6366f1; 
   }
 }
 
-/* --- Functional Pagination Styling --- */
 .pagination {
   display: flex;
   justify-content: flex-end;
@@ -276,19 +273,16 @@ body {
   font-weight: 600;
 }
 
-/* Action Icons Styling */
 .action-icons {
   display: flex;
   align-items: center;
   gap: 8px;
 }
 .action-icons .icon {
-  // FIX: Explicitly set the icon size in CSS since Tailwind utility classes
-  // (like w-5 h-5) are not functional here without the framework.
   width: 20px;
   height: 20px;
 
-  font-size: 18px; /* This property is usually ignored for SVG icons, but was in the original plan */
+  font-size: 18px; 
   cursor: pointer;
   color: #c9c9d4;
   transition: color 0.15s;
@@ -297,82 +291,67 @@ body {
   color: #6366f1;
 }
 
-// ===================================
-// --- RESPONSIVE STYLES (Mobile/Tablet) ---
-// ===================================
-
 @media (max-width: 768px) {
   .table-wrapper {
-    padding: 15px; // Reduce wrapper padding
+    padding: 15px; 
   }
 
   .table-header {
-    // Allow the header items (text, search, buttons) to stack
     flex-direction: column;
-    align-items: flex-start; // Stack items on the left
-    gap: 15px; // Increase gap between header blocks
+    align-items: flex-start;
+    gap: 15px; 
   }
 
   .header-right {
-    // Allow search/filter/add buttons to wrap themselves
+   
     width: 100%;
     justify-content: space-between;
 
     .search-input {
-      flex-grow: 1; // Allow search to take up available space
+      flex-grow: 1; 
       input {
-        width: 100%; // Make input fill its container
+        width: 100%;
         min-width: 100px;
       }
     }
 
-    // Ensure buttons don't take up too much space and are flexible
     .filter-button,
     .add-button {
       flex-shrink: 0;
     }
   }
 
-  // --- Crucial for Table Body ---
-  // The 'overflow-x-auto' class should be on the wrapper *around* the table in your JSX.
-  // We need to make sure the table can scroll horizontally.
   .overflow-x-auto {
     width: 100%;
-    overflow-x: auto; /* Enable horizontal scrolling */
-    -webkit-overflow-scrolling: touch; /* Better scrolling on iOS */
+    overflow-x: auto; 
+    -webkit-overflow-scrolling: touch;
   }
 
   .data-table {
-    // Remove fixed layout and minimum width for table content.
     table-layout: auto;
-    min-width: 800px; /* Give the table a minimum width to enable scrolling */
+    min-width: 800px; 
   }
 
   .data-table th,
   .data-table td {
-    padding: 10px 12px; /* Reduce cell padding */
-    // Remove 'white-space: nowrap' from here if you want text to wrap,
-    // but typically for tables, horizontal scroll is preferred.
-    // If we keep 'white-space: nowrap', the min-width is necessary.
+    padding: 10px 12px; 
+    
   }
 
-  // Conditionally hide low-priority columns (e.g., Description, Source, Interest)
+  
   .data-table th:nth-child(3),
-  .data-table td:nth-child(3), /* Number */
-  .data-table th:nth-child(6),
-  .data-table td:nth-child(6), /* Source */
+  .data-table td:nth-child(3),
+  .data-table th:nth-child(6)
+  .data-table td:nth-child(6),
   .data-table th:nth-child(8),
-  .data-table td:nth-child(8) /* Interest */ {
+  .data-table td:nth-child(8)  {
     display: none;
   }
-  // This will make the table narrower, which might prevent the need for scrolling
-  // on a tablet, or at least make the scroll shorter on mobile.
+ 
 }
 
 @media (max-width: 480px) {
-  // Further adjustments for very small screens
   .header-right {
-    // Stack search/buttons vertically
     flex-direction: column;
     align-items: stretch;
 
@@ -382,15 +361,14 @@ body {
 
     .filter-button,
     .add-button {
-      width: 100%; // Make buttons full width
+      width: 100%; 
     }
   }
 
-  // Hide even more columns on a small phone screen
   .data-table th:nth-child(4),
-  .data-table td:nth-child(4), /* Description */
+  .data-table td:nth-child(4), 
   .data-table th:nth-child(7),
-  .data-table td:nth-child(7) /* Amount */ {
+  .data-table td:nth-child(7)  {
     display: none;
   }
 }

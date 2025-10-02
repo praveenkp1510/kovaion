@@ -15,14 +15,14 @@
     .title {
       font-size: 14px;
       color: #c9c9d4;
-      order: 3; // Move title to the bottom
+      order: 3; 
     }
 
     .value {
       font-size: 28px;
       font-weight: bold;
       margin-bottom: 5px;
-      order: 1; // Move value to the top
+      order: 1; 
     }
 
     .change-indicator {
@@ -31,40 +31,33 @@
       font-size: 14px;
       font-weight: 500;
       margin-bottom: 10px;
-      order: 2; // Move indicator below value
+      order: 2; 
 
       .arrow-icon {
         margin-right: 5px;
       }
 
       &.positive {
-        color: #10b981; // Green
+        color: #10b981; 
       }
 
       &.negative {
-        color: #ef4444; // Red
+        color: #ef4444;
       }
     }
   }
 
-  // Simple placeholder for the donut chart visual
   .donut-chart-placeholder {
     width: 80px;
     height: 80px;
     border-radius: 50%;
 
-    // Set the default background to transparent so only the border is seen.
     background-color: transparent;
 
-    // The 'donut-like visual' should now be the border itself.
-    // I'm removing the inner 'white' border and using the color classes for the border.
-    // The 'width' and 'height' now define the inner transparent circle size.
 
-    // --- Core Donut Style ---
-    border: 8px solid; // Base border style without a default color
+    border: 8px solid; 
     // ------------------------
 
-    // Color differentiation now applies to the border color
     &.yellow {
       border-color: #f59e0b;
     }
@@ -79,26 +72,22 @@
     }
   }
 
-  // ===================================
-  // --- RESPONSIVE STYLES (Mobile/Tablet) ---
-  // ===================================
+  
 
   @media (max-width: 768px) {
-    padding: 15px; // Reduce card padding
+    padding: 15px; 
   }
 
   @media (max-width: 480px) {
-    // Stack Card Content & Chart vertically if necessary (though your Card.scss is flexible)
-    // To save space, shrink the donut chart
     .donut-chart-placeholder {
       width: 50px;
       height: 50px;
-      border: 6px solid; // Slightly thinner border
+      border: 6px solid; 
     }
 
     .card-content {
       .value {
-        font-size: 24px; // Slightly smaller value
+        font-size: 24px; 
       }
     }
   }
