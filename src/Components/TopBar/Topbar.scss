@@ -1,0 +1,114 @@
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #2a2a44; // Slightly lighter dark background than sidebar
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+
+  .search-box {
+    display: flex;
+    align-items: center;
+    background-color: #383857;
+    border-radius: 8px;
+    padding: 8px 15px;
+    width: 400px;
+
+    .search-icon {
+      color: #c9c9d4;
+      font-size: 20px;
+      margin-right: 10px;
+    }
+
+    input {
+      flex-grow: 1;
+      border: none;
+      background: transparent;
+      color: #fff;
+      outline: none;
+      font-size: 16px;
+    }
+  }
+
+  .topbar-right {
+    display: flex;
+    align-items: center;
+
+    .icon {
+      font-size: 24px;
+      color: #c9c9d4;
+      margin-left: 20px;
+      cursor: pointer;
+    }
+
+    .user-info {
+      display: flex;
+      align-items: center;
+      margin-left: 30px;
+
+      .avatar {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        background-color: #4f46e5;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        margin-right: 10px;
+      }
+
+      span {
+        color: #fff;
+        font-weight: 500;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 10px 15px; // Reduced padding
+    flex-wrap: wrap; // Allow elements to wrap
+
+    .search-box {
+      // For tablet/smaller desktop, reduce max width
+      width: 250px;
+    }
+
+    .topbar-right {
+      // Make sure icons and user info stay together
+      margin-left: auto;
+    }
+  }
+
+  @media (max-width: 480px) {
+    // On mobile, the entire topbar will likely use a different layout
+    // depending on the Sidebar state, but for standalone Topbar:
+
+    // 1. Hide the Search Box
+    .search-box {
+      display: none;
+    }
+
+    // 2. Use full width for the bar and center the items
+    // (or just keep space-between for Topbar-Left/Right)
+    justify-content: space-between;
+    width: 100%;
+
+    // 3. Simplify User Info
+    .topbar-right {
+      // Hide the user's name on mobile
+      .user-info {
+        margin-left: 15px; // Reduce margin
+        span {
+          display: none;
+        }
+      }
+      .icon {
+        margin-left: 15px; // Reduce margin between icons
+      }
+    }
+  }
+}

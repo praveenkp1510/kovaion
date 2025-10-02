@@ -1,0 +1,83 @@
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  // Account for the fixed sidebar width
+  padding-left: 8%;
+  background-color: #12122346; // Main background for the entire app area
+
+  .main-content {
+    flex-grow: 1;
+    padding: 20px;
+
+    .dashboard-body {
+      // The content area below the Topbar
+      padding: 0 10px;
+
+      .leads-header {
+        display: flex;
+        align-items: center;
+        margin: 10px 0 20px;
+
+        .header-icon {
+          font-size: 24px;
+          margin-right: 10px;
+          color: #6366f1;
+        }
+
+        h1 {
+          font-size: 24px;
+          color: #fff;
+          margin: 0;
+        }
+      }
+
+      .cards-container {
+        display: grid;
+        // 5 cards visible, slightly less than 500px wide
+        grid-template-columns: repeat(auto-fit, minmax(10%, 1fr));
+        gap: 20px;
+        margin-bottom: 20px;
+      }
+
+      .table-container {
+        width: 100%;
+      }
+    }
+  }
+
+  // ===================================
+  // --- RESPONSIVE STYLES (Mobile/Tablet) ---
+  // ===================================
+
+  @media (max-width: 768px) {
+    // 1. Remove the fixed-sidebar padding so content uses full width
+    padding-left: 0;
+
+    .main-content {
+      // Reduce padding on smaller screens
+      padding: 10px;
+
+      .dashboard-body {
+        padding: 0;
+      }
+
+      // 2. Adjust Card Layout
+      .cards-container {
+        // Switch to max 2 columns, or even 1 column on very small screens,
+        // and allow card content to dictate the final width.
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .main-content {
+      .cards-container {
+        // On very small screens (like phones), force one card per row
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}

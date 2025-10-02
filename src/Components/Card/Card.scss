@@ -1,0 +1,105 @@
+.card {
+  background-color: #2a2a44;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+  .card-content {
+    display: flex;
+    flex-direction: column;
+
+    .title {
+      font-size: 14px;
+      color: #c9c9d4;
+      order: 3; // Move title to the bottom
+    }
+
+    .value {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 5px;
+      order: 1; // Move value to the top
+    }
+
+    .change-indicator {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 10px;
+      order: 2; // Move indicator below value
+
+      .arrow-icon {
+        margin-right: 5px;
+      }
+
+      &.positive {
+        color: #10b981; // Green
+      }
+
+      &.negative {
+        color: #ef4444; // Red
+      }
+    }
+  }
+
+  // Simple placeholder for the donut chart visual
+  .donut-chart-placeholder {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+
+    // Set the default background to transparent so only the border is seen.
+    background-color: transparent;
+
+    // The 'donut-like visual' should now be the border itself.
+    // I'm removing the inner 'white' border and using the color classes for the border.
+    // The 'width' and 'height' now define the inner transparent circle size.
+
+    // --- Core Donut Style ---
+    border: 8px solid; // Base border style without a default color
+    // ------------------------
+
+    // Color differentiation now applies to the border color
+    &.yellow {
+      border-color: #f59e0b;
+    }
+    &.red {
+      border-color: #ef4444;
+    }
+    &.orange {
+      border-color: #f97316;
+    }
+    &.blue {
+      border-color: #3b82f6;
+    }
+  }
+
+  // ===================================
+  // --- RESPONSIVE STYLES (Mobile/Tablet) ---
+  // ===================================
+
+  @media (max-width: 768px) {
+    padding: 15px; // Reduce card padding
+  }
+
+  @media (max-width: 480px) {
+    // Stack Card Content & Chart vertically if necessary (though your Card.scss is flexible)
+    // To save space, shrink the donut chart
+    .donut-chart-placeholder {
+      width: 50px;
+      height: 50px;
+      border: 6px solid; // Slightly thinner border
+    }
+
+    .card-content {
+      .value {
+        font-size: 24px; // Slightly smaller value
+      }
+    }
+  }
+}

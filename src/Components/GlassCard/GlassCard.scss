@@ -1,0 +1,21 @@
+// Define the mixin and the base class here
+@mixin glass-effect($blur: 10px, $bg-color: rgba(255, 255, 255, 0.05), $border-color: rgba(255, 255, 255, 0.15)) {
+    background: $bg-color;
+    backdrop-filter: blur($blur);
+    -webkit-backdrop-filter: blur($blur); 
+    border: 1px solid $border-color;
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); 
+    transition: all 0.3s ease;
+}
+
+.glass-card {
+    @include glass-effect(15px); // Apply the mixin
+    padding: 20px;
+    margin-bottom: 20px;
+    color: #f1f1f1;
+    
+    &:hover { 
+        box-shadow: 0 8px 60px rgba(0, 0, 0, 0.3);
+    }
+}

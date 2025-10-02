@@ -1,0 +1,30 @@
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  background-image: linear-gradient(
+    to left,
+    // Direction: starts on the right, ends on the left
+    #2b65ac,
+    // Start Color (Right side)
+    #341f49 // End Color (Left side)
+  );
+}
+
+// Reset and Global Styles
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: #121223; // Matches the main dashboard background
+}
+
+.app-layout {
+  // Ensure the main layout can contain the fixed sidebar and scroll the content
+  display: flex;
+}
